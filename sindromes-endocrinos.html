@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grandes Síndromes Endocrinos — Semiología Clínica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#0e2620;
+  --green-800:#143a30;
+  --green-700:#1b5040;
+  --green-600:#246b54;
+  --gold:#c9a44c;
+  --gold-light:#e3c878;
+  --cream:#f4efe2;
+  --cream-soft:#fbf8f0;
+  --ink:#10221c;
+  --muted:#6e7a73;
+  --danger:#a5443a;
+  --shadow:0 18px 50px -22px rgba(10,38,30,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(900px 500px at 88% -8%,rgba(201,164,76,.10),transparent 60%),
+    radial-gradient(800px 600px at -10% 100%,rgba(36,107,84,.10),transparent 55%);
+}
+
+/* HEADER */
+header{
+  background:
+    linear-gradient(140deg,var(--green-900) 0%,var(--green-700) 100%);
+  color:var(--cream);
+  padding:4.5rem 1.5rem 5.5rem;
+  position:relative;overflow:hidden;
+}
+header::after{
+  content:"";position:absolute;inset:0;opacity:.07;
+  background-image:radial-gradient(var(--gold-light) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.hwrap{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+.eyebrow{
+  font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--gold-light);font-weight:600;margin-bottom:1.1rem;
+}
+header h1{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.04;
+  letter-spacing:-.5px;max-width:16ch;
+}
+header h1 em{color:var(--gold-light);font-style:italic}
+.lead{
+  margin-top:1.4rem;max-width:60ch;color:rgba(244,239,226,.82);
+  font-weight:300;font-size:1.05rem;
+}
+.hmeta{
+  margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem;
+}
+.chip{
+  font-size:.72rem;letter-spacing:.05em;border:1px solid rgba(227,200,120,.4);
+  color:var(--gold-light);padding:.4rem .85rem;border-radius:30px;
+  text-transform:uppercase;font-weight:500;
+}
+.author{
+  margin-top:1.5rem;
+  max-width:fit-content;
+}
+.author-name{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;
+  color:var(--gold-light);letter-spacing:.3px;
+}
+.author-role{
+  font-size:.82rem;font-weight:300;color:rgba(244,239,226,.78);
+  letter-spacing:.02em;margin-top:.15rem;
+}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(244,239,226,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(36,107,84,.15);
+}
+.navwrap{
+  max-width:1080px;margin:0 auto;display:flex;gap:.4rem;overflow-x:auto;
+  padding:.7rem 1rem;scrollbar-width:none;
+}
+.navwrap::-webkit-scrollbar{display:none}
+.navwrap button{
+  flex:0 0 auto;border:none;background:transparent;cursor:pointer;
+  font-family:'Montserrat';font-size:.82rem;font-weight:600;
+  color:var(--green-700);padding:.5rem .95rem;border-radius:24px;
+  white-space:nowrap;transition:.25s;letter-spacing:.02em;
+}
+.navwrap button:hover{background:rgba(36,107,84,.1)}
+.navwrap button.active{background:var(--green-700);color:var(--cream)}
+
+main{max-width:1080px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+/* SECTION */
+.section{display:none;animation:fade .5s ease}
+.section.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.sectionhead{margin-bottom:2.2rem}
+.sectionhead .kicker{
+  font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;
+}
+.sectionhead h2{
+  font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.7rem);
+  color:var(--green-900);margin-top:.5rem;letter-spacing:-.4px;
+}
+.sectionhead p{color:var(--muted);max-width:65ch;margin-top:.7rem;font-weight:400}
+
+/* CARDS */
+.grid{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{
+  background:var(--cream-soft);border:1px solid rgba(36,107,84,.14);
+  border-radius:18px;padding:1.6rem 1.6rem 1.7rem;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(var(--gold),var(--green-600));
+}
+.card h3{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.28rem;
+  color:var(--green-800);margin-bottom:.2rem;
+}
+.card .sub{font-size:.78rem;color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
+.card h4{
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green-700);font-weight:700;margin:1.1rem 0 .5rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.card h4::before{content:"";width:7px;height:7px;background:var(--gold);border-radius:50%}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.card li{
+  font-size:.9rem;padding-left:1.1rem;position:relative;color:#243832;
+}
+.card li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* PEARL */
+.pearl{
+  margin-top:1.2rem;background:linear-gradient(135deg,var(--green-900),var(--green-700));
+  color:var(--cream);border-radius:13px;padding:.95rem 1.1rem;font-size:.85rem;
+}
+.pearl b{color:var(--gold-light);display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem}
+
+/* DDX TABLE */
+.tblwrap{overflow-x:auto;border-radius:16px;box-shadow:var(--shadow);margin-top:1.5rem}
+table{border-collapse:collapse;width:100%;min-width:580px;background:var(--cream-soft);font-size:.88rem}
+th{background:var(--green-800);color:var(--cream);text-align:left;padding:.85rem 1rem;font-weight:600;font-size:.8rem;letter-spacing:.04em}
+td{padding:.8rem 1rem;border-top:1px solid rgba(36,107,84,.12);vertical-align:top}
+tr:nth-child(even) td{background:rgba(36,107,84,.04)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.18rem .6rem;border-radius:20px}
+.up{background:rgba(165,68,58,.14);color:var(--danger)}
+.down{background:rgba(36,107,84,.16);color:var(--green-700)}
+.norm{background:rgba(110,122,115,.16);color:var(--muted)}
+
+/* QUIZ */
+.quizbox{
+  background:var(--cream-soft);border:1px solid rgba(36,107,84,.14);
+  border-radius:18px;padding:1.8rem;box-shadow:var(--shadow);margin-top:1.5rem;
+}
+.q{margin-bottom:1.6rem}
+.q:last-child{margin-bottom:0}
+.q .stem{font-weight:600;color:var(--green-900);margin-bottom:.9rem;font-size:.98rem}
+.opt{
+  display:block;width:100%;text-align:left;background:var(--cream);
+  border:1.5px solid rgba(36,107,84,.18);border-radius:11px;
+  padding:.7rem .95rem;margin-bottom:.55rem;cursor:pointer;
+  font-family:'Montserrat';font-size:.88rem;color:#243832;transition:.2s;
+}
+.opt:hover{border-color:var(--gold)}
+.opt.correct{background:rgba(36,107,84,.13);border-color:var(--green-600);font-weight:600}
+.opt.wrong{background:rgba(165,68,58,.1);border-color:var(--danger)}
+.fb{font-size:.85rem;margin-top:.5rem;padding:.7rem .9rem;border-radius:10px;background:rgba(201,164,76,.12);display:none}
+.fb.show{display:block}
+.fb b{color:var(--green-800)}
+
+footer{text-align:center;padding:2.5rem 1.5rem;color:var(--muted);font-size:.8rem;border-top:1px solid rgba(36,107,84,.14)}
+footer b{color:var(--green-700)}
+.algo{
+  display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;
+  margin-top:1.4rem;font-size:.85rem;
+}
+.node{background:var(--green-700);color:var(--cream);padding:.5rem .9rem;border-radius:10px;font-weight:600}
+.node.q2{background:var(--gold);color:var(--green-900)}
+.arrow{color:var(--gold);font-weight:700;font-size:1.1rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hwrap">
+    <div class="eyebrow">Semiología Clínica · Endocrinología</div>
+    <h1>Grandes Síndromes <em>Endocrinos</em></h1>
+    <div class="author">
+      <div class="author-name">Juan David Serna Zuluaga · MD, MSc</div>
+      <div class="author-role">Médico · Magíster en Educación y Transformación Digital</div>
+      <div class="author-role">Semiología Médica · Universidad de Manizales</div>
+    </div>
+    <div class="hmeta">
+      <span class="chip">Diabetes Mellitus</span>
+      <span class="chip">Tiroides</span>
+      <span class="chip">Eje suprarrenal</span>
+      <span class="chip">Calcio · PTH · Vit D</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="navwrap" id="nav">
+    <button data-t="dm" class="active">Diabetes Mellitus</button>
+    <button data-t="tiroides">Tiroides</button>
+    <button data-t="aldo">Aldosterona</button>
+    <button data-t="cushing">Cushing</button>
+    <button data-t="feo">Feocromocitoma</button>
+    <button data-t="calcio">Calcio &amp; PTH</button>
+    <button data-t="vitd">Vit D &amp; Hipocalcemia</button>
+    <button data-t="quiz">Autoevaluación</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- DIABETES -->
+<section class="section show" id="dm">
+  <div class="sectionhead">
+    <div class="kicker">Síndrome hiperglucémico</div>
+    <h2>Diabetes Mellitus</h2>
+    <p>Déficit absoluto (DM1) o relativo con resistencia insulínica (DM2). La hiperglucemia crónica explica tanto los síntomas cardinales como el daño micro/macrovascular.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Síndrome cardinal</h3>
+      <div class="sub">Las "4 P"</div>
+      <ul><li>Poliuria (diuresis osmótica)</li><li>Polidipsia</li><li>Polifagia</li><li>Pérdida de peso (DM1 / debut)</li></ul>
+      <h4>Inspección dirigida</h4>
+      <ul><li>Acantosis nigricans (resistencia)</li><li>Candidiasis, balanitis, prurito</li><li>Necrobiosis lipoídica</li></ul>
+    </div>
+    <div class="card">
+      <h3>Examen del pie diabético</h3>
+      <div class="sub">Neuropático · isquémico · mixto</div>
+      <ul><li>Monofilamento 10 g (sensibilidad protectora)</li><li>Diapasón 128 Hz — vibratoria</li><li>Pulsos pedio y tibial posterior</li><li>Reflejo aquíleo abolido</li><li>Deformidad / Charcot, hiperqueratosis</li></ul>
+      <div class="pearl"><b>Perla</b>Pie caliente, seco y con pulsos = neuropático; frío, sin pulsos, claudicante = isquémico.</div>
+    </div>
+    <div class="card">
+      <h3>Complicaciones agudas</h3>
+      <div class="sub">Reconocer al pie de cama</div>
+      <h4>Cetoacidosis (DM1)</h4>
+      <ul><li>Kussmaul, aliento cetónico</li><li>Dolor abdominal, deshidratación</li></ul>
+      <h4>Estado hiperosmolar (DM2)</h4>
+      <ul><li>Deterioro de conciencia, deshidratación severa</li><li>Glucemias muy altas sin cetosis marcada</li></ul>
+    </div>
+    <div class="card">
+      <h3>Diagnóstico</h3>
+      <div class="sub">Criterios ADA</div>
+      <ul><li>Glucemia ayunas ≥126 mg/dL</li><li>HbA1c ≥6,5 %</li><li>PTOG 2 h ≥200 mg/dL</li><li>Glucemia al azar ≥200 + síntomas</li></ul>
+      <div class="pearl"><b>Perla semiológica</b>El examen físico no diagnostica DM, pero rastrea sus consecuencias: fondo de ojo, pie, piel, TA y peso.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIROIDES -->
+<section class="section" id="tiroides">
+  <div class="sectionhead">
+    <div class="kicker">Eje hipotálamo–hipófiso–tiroideo</div>
+    <h2>Hipotiroidismo &amp; Hipertiroidismo</h2>
+    <p>El estado tiroideo modula el metabolismo basal global; clínicamente se expresa como un espectro hipometabólico o hipermetabólico.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Hipotiroidismo</h3>
+      <div class="sub">Estado hipometabólico</div>
+      <h4>Síntomas</h4>
+      <ul><li>Astenia, intolerancia al frío</li><li>Aumento de peso, estreñimiento</li><li>Bradipsiquia, somnolencia</li><li>Menorragia, depresión</li></ul>
+      <h4>Signos</h4>
+      <ul><li>Piel seca y fría, mixedema</li><li>Bradicardia, voz ronca</li><li>Reflejo aquíleo con relajación lenta</li><li>Madarosis (cola de cejas)</li></ul>
+      <div class="pearl"><b>Laboratorio</b>Primario: TSH ↑, T4L ↓. Central: TSH ↓/normal-baja con T4L ↓.</div>
+    </div>
+    <div class="card">
+      <h3>Hipertiroidismo</h3>
+      <div class="sub">Estado hipermetabólico</div>
+      <h4>Síntomas</h4>
+      <ul><li>Pérdida de peso con apetito conservado</li><li>Intolerancia al calor, sudoración</li><li>Nerviosismo, insomnio, palpitaciones</li><li>Diarrea, oligomenorrea</li></ul>
+      <h4>Signos</h4>
+      <ul><li>Taquicardia, FA, piel caliente y húmeda</li><li>Temblor fino distal, hiperreflexia</li><li>Bocio, retracción palpebral, lid-lag</li></ul>
+      <div class="pearl"><b>Específico de Graves</b>Oftalmopatía (exoftalmos), mixedema pretibial y soplo/thrill tiroideo.</div>
+    </div>
+    <div class="card">
+      <h3>Orientación etiológica</h3>
+      <div class="sub">Palpación del cuello</div>
+      <ul><li>Bocio difuso + oftalmopatía → Graves</li><li>Nódulo único hiperfuncionante → adenoma tóxico</li><li>Bocio multinodular → Plummer</li><li>Tiroides dolorosa → tiroiditis subaguda</li></ul>
+      <div class="pearl"><b>Crisis tiroidea</b>Fiebre, taquiarritmia, agitación y disfunción multiorgánica: emergencia.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ALDOSTERONA -->
+<section class="section" id="aldo">
+  <div class="sectionhead">
+    <div class="kicker">Mineralocorticoides</div>
+    <h2>Hiperaldosteronismo Primario y Secundario</h2>
+    <p>Exceso de aldosterona → retención de Na⁺ y agua, pérdida de K⁺ e H⁺. La clave diferencial está en la relación aldosterona/renina.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Primario (Conn)</h3>
+      <div class="sub">Renina suprimida</div>
+      <ul><li>HTA resistente, a menudo en joven</li><li>Hipopotasemia (calambres, debilidad, poliuria)</li><li>Alcalosis metabólica</li><li>Sin edemas significativos</li></ul>
+      <div class="pearl"><b>Bioquímica</b>Aldosterona ↑ + Renina ↓ → relación ARR elevada. Adenoma o hiperplasia bilateral.</div>
+    </div>
+    <div class="card">
+      <h3>Secundario</h3>
+      <div class="sub">Renina elevada</div>
+      <ul><li>Activación del eje renina-angiotensina</li><li>Estenosis de arteria renal, ICC, cirrosis, síndrome nefrótico</li><li>Frecuentemente con edemas (estados edematosos)</li></ul>
+      <div class="pearl"><b>Bioquímica</b>Aldosterona ↑ + Renina ↑. El estímulo es la hipoperfusión renal real o efectiva.</div>
+    </div>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Parámetro</th><th>Primario</th><th>Secundario</th></tr></thead>
+      <tbody>
+        <tr><td>Aldosterona</td><td><span class="tag up">↑</span></td><td><span class="tag up">↑</span></td></tr>
+        <tr><td>Renina</td><td><span class="tag down">↓</span></td><td><span class="tag up">↑</span></td></tr>
+        <tr><td>Relación ARR</td><td><span class="tag up">Alta</span></td><td><span class="tag down">Baja/normal</span></td></tr>
+        <tr><td>Potasio</td><td><span class="tag down">↓</span></td><td>Variable</td></tr>
+        <tr><td>Volemia/edema</td><td>Normal-baja, sin edema</td><td>Sobrecarga / edema</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CUSHING -->
+<section class="section" id="cushing">
+  <div class="sectionhead">
+    <div class="kicker">Exceso de glucocorticoides</div>
+    <h2>Síndrome de Cushing</h2>
+    <p>El fenotipo cushingoide deriva del exceso crónico de cortisol. La distinción clave es ACTH-dependiente vs independiente, y exógeno vs endógeno.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Fenotipo cushingoide</h3>
+      <div class="sub">Hallazgos semiológicos</div>
+      <ul><li>Obesidad central, cara de luna llena</li><li>Giba dorsal, relleno supraclavicular</li><li>Estrías violáceas anchas (&gt;1 cm)</li><li>Atrofia cutánea, equimosis fáciles</li><li>Debilidad proximal, HTA, hiperglucemia</li><li>Hirsutismo, osteoporosis, labilidad</li></ul>
+    </div>
+    <div class="card">
+      <h3>Iatrogénico (exógeno)</h3>
+      <div class="sub">La causa más frecuente</div>
+      <ul><li>Corticoides exógenos prolongados</li><li>Fenotipo cushingoide presente</li><li>Cortisol y ACTH endógenos suprimidos</li><li>Suprarrenales atróficas</li></ul>
+      <div class="pearl"><b>Clave</b>Siempre interrogar uso de esteroides (orales, inhalados, infiltraciones) antes de estudiar lo endógeno.</div>
+    </div>
+    <div class="card">
+      <h3>Endógeno: subtipos</h3>
+      <div class="sub">Según ACTH</div>
+      <h4>ACTH-dependiente</h4>
+      <ul><li>Enfermedad de Cushing (adenoma hipofisario) — "secundario"</li><li>ACTH ectópico (carcinoma microcítico, tumor carcinoide)</li></ul>
+      <h4>ACTH-independiente</h4>
+      <ul><li>Adenoma/carcinoma suprarrenal — "primario"</li><li>Hiperplasia suprarrenal</li></ul>
+    </div>
+    <div class="card">
+      <h3>Pistas del ectópico</h3>
+      <div class="sub">Diferenciar de Cushing hipofisario</div>
+      <ul><li>Instauración rápida, miopatía marcada</li><li>Hiperpigmentación (ACTH muy alta)</li><li>Hipopotasemia intensa, alcalosis</li><li>Pérdida de peso paradójica (neoplasia)</li></ul>
+    </div>
+    <div class="card">
+      <h3>Hiperpigmentación: el porqué</h3>
+      <div class="sub">Solo en ACTH-dependientes</div>
+      <ul><li>La <b>POMC</b> (proopiomelanocortina) es el precursor común que se procesa a ACTH y a <b>α-MSH</b></li><li>En el secundario (E. de Cushing) y el ectópico, el exceso de ACTH conlleva exceso de MSH derivada de POMC</li><li>La MSH estimula los melanocitos → hiperpigmentación cutáneo-mucosa</li><li>La propia ACTH, en concentraciones muy altas, también activa el receptor de melanocortina (MC1R)</li></ul>
+      <div class="pearl"><b>Clave diferencial</b>El primario (suprarrenal) y el iatrogénico cursan con ACTH suprimida → <b>sin hiperpigmentación</b>. La pigmentación apunta a origen ACTH-dependiente.</div>
+    </div>
+  </div>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Tipo</th><th>Origen</th><th>ACTH</th><th>Cortisol</th><th>Pigmentación</th></tr></thead>
+      <tbody>
+        <tr><td>Primario (suprarrenal)</td><td>Adenoma/Ca suprarrenal</td><td><span class="tag down">↓</span></td><td><span class="tag up">↑</span></td><td><span class="tag norm">No</span></td></tr>
+        <tr><td>Secundario (E. de Cushing)</td><td>Adenoma hipofisario</td><td><span class="tag up">↑</span></td><td><span class="tag up">↑</span></td><td><span class="tag up">Sí (POMC)</span></td></tr>
+        <tr><td>Ectópico</td><td>Tumor no hipofisario</td><td><span class="tag up">↑↑</span></td><td><span class="tag up">↑↑</span></td><td><span class="tag up">Sí (POMC)</span></td></tr>
+        <tr><td>Iatrogénico</td><td>Corticoide exógeno</td><td><span class="tag down">↓</span></td><td><span class="tag down">↓</span></td><td><span class="tag norm">No</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FEOCROMOCITOMA -->
+<section class="section" id="feo">
+  <div class="sectionhead">
+    <div class="kicker">Médula suprarrenal</div>
+    <h2>Feocromocitoma</h2>
+    <p>Tumor productor de catecolaminas. Su clínica paroxística refleja descargas adrenérgicas episódicas. "Regla de los 10": 10 % bilateral, extraadrenal, maligno, familiar.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Tríada clásica</h3>
+      <div class="sub">Crisis adrenérgica</div>
+      <ul><li>Cefalea pulsátil</li><li>Sudoración profusa (diaforesis)</li><li>Palpitaciones / taquicardia</li></ul>
+      <div class="pearl"><b>Sello distintivo</b>HTA paroxística (o sostenida con paroxismos), desencadenada por estrés, ejercicio, micción o ciertos fármacos.</div>
+    </div>
+    <div class="card">
+      <h3>Otros hallazgos</h3>
+      <div class="sub">Examen y anamnesis</div>
+      <ul><li>Palidez durante la crisis, ansiedad, temblor</li><li>Pérdida de peso, hiperglucemia</li><li>Hipotensión ortostática (depleción volumen)</li><li>Crisis precipitada por palpación abdominal</li></ul>
+    </div>
+    <div class="card">
+      <h3>Diagnóstico y contexto</h3>
+      <div class="sub">No olvidar lo sindrómico</div>
+      <ul><li>Metanefrinas libres en plasma / orina 24 h</li><li>Asociado a MEN 2, VHL, neurofibromatosis</li></ul>
+      <div class="pearl"><b>Advertencia</b>Bloqueo β sin α previo puede precipitar crisis hipertensiva: primero α-bloqueo.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCIO PTH -->
+<section class="section" id="calcio">
+  <div class="sectionhead">
+    <div class="kicker">Metabolismo fosfocálcico</div>
+    <h2>Hipercalcemia: PTH alta vs PTH baja</h2>
+    <p>Ante hipercalcemia, la PTH divide el diagnóstico en dos grandes ramas: mediada por PTH (inapropiadamente normal/alta) o independiente de PTH (suprimida).</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Clínica de hipercalcemia</h3>
+      <div class="sub">"Stones, bones, groans, moans"</div>
+      <ul><li>Litiasis renal, poliuria, nefrocalcinosis</li><li>Dolor óseo, fracturas, osteítis fibrosa</li><li>Náuseas, estreñimiento, dolor abdominal, pancreatitis, úlcera</li><li>Letargia, confusión, depresión, debilidad</li><li>QT acortado</li></ul>
+    </div>
+    <div class="card">
+      <h3>PTH ↑ (o inapropiada)</h3>
+      <div class="sub">Hipercalcemia PTH-dependiente</div>
+      <ul><li>Hiperparatiroidismo primario (adenoma) — la causa ambulatoria más frecuente</li><li>Hiperparatiroidismo terciario</li><li>Hipercalcemia hipocalciúrica familiar</li></ul>
+      <div class="pearl"><b>Patrón</b>Ca ↑, PTH ↑/normal-alta, fósforo ↓. Calciuria ayuda a separar HHF.</div>
+    </div>
+    <div class="card">
+      <h3>PTH ↓ (suprimida)</h3>
+      <div class="sub">Hipercalcemia PTH-independiente</div>
+      <ul><li>Malignidad: PTHrP (humoral), metástasis osteolíticas</li><li>Mieloma múltiple</li><li>Intoxicación por vitamina D, granulomatosis (sarcoidosis)</li><li>Hipertiroidismo, inmovilización</li></ul>
+      <div class="pearl"><b>Patrón</b>Ca ↑, PTH ↓. En el medio hospitalario, sospechar malignidad.</div>
+    </div>
+  </div>
+  <div class="algo">
+    <span class="node">Hipercalcemia confirmada</span><span class="arrow">→</span>
+    <span class="node q2">Medir PTH</span><span class="arrow">→</span>
+    <span class="node">PTH ↑/normal: paratiroides / HHF</span>
+    <span class="node" style="background:var(--danger)">PTH ↓: malignidad, vit D, granulomas</span>
+  </div>
+</section>
+
+<!-- VIT D -->
+<section class="section" id="vitd">
+  <div class="sectionhead">
+    <div class="kicker">Hipovitaminosis D</div>
+    <h2>Déficit de Vitamina D &amp; Hipocalcemia</h2>
+    <p>La vitamina D mantiene la absorción intestinal de calcio y fósforo. Su déficit genera hipocalcemia con hiperparatiroidismo secundario compensador.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Clínica del déficit de Vit D</h3>
+      <div class="sub">Mineralización ósea alterada</div>
+      <ul><li>Niños: raquitismo (deformidades, retraso)</li><li>Adultos: osteomalacia, dolor óseo difuso</li><li>Debilidad muscular proximal</li><li>Mayor riesgo de caídas y fracturas</li></ul>
+      <div class="pearl"><b>Bioquímica típica</b>25-OH-D ↓, Ca normal-bajo, P ↓, PTH ↑ (secundario), fosfatasa alcalina ↑.</div>
+    </div>
+    <div class="card">
+      <h3>Clínica de hipocalcemia</h3>
+      <div class="sub">Hiperexcitabilidad neuromuscular</div>
+      <ul><li>Parestesias peribucales y distales</li><li>Espasmos, calambres, tetania</li><li>Laringoespasmo, convulsiones</li><li>QT prolongado</li></ul>
+    </div>
+    <div class="card">
+      <h3>Signos provocados</h3>
+      <div class="sub">Maniobras clásicas</div>
+      <h4>Signo de Chvostek</h4>
+      <ul><li>Percusión del nervio facial → contracción facial ipsilateral</li></ul>
+      <h4>Signo de Trousseau</h4>
+      <ul><li>Manguito por encima de la PAS (presión arterial sistólica) durante 3 min → espasmo carpopedal (mano de partero)</li></ul>
+      <div class="pearl"><b>Perla</b>Trousseau es más específico que Chvostek para hipocalcemia.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+  <div class="sectionhead">
+    <div class="kicker">Razonamiento clínico</div>
+    <h2>Autoevaluación interactiva</h2>
+    <p>Selecciona la respuesta correcta para recibir retroalimentación inmediata.</p>
+  </div>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+
+</main>
+
+<footer>
+  <p><b>Grandes Síndromes Endocrinos</b> — Material de apoyo en Semiología Clínica.</p>
+  <p>Juan David Serna Zuluaga, MD, MSc · Semiología Médica · Universidad de Manizales</p>
+  <p>Recurso educativo. No reemplaza guías clínicas vigentes ni el juicio del docente.</p>
+</footer>
+
+<script>
+// NAVEGACIÓN
+const buttons=document.querySelectorAll('#nav button');
+const sections=document.querySelectorAll('.section');
+buttons.forEach(b=>b.addEventListener('click',()=>{
+  buttons.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  sections.forEach(s=>s.classList.remove('show'));
+  document.getElementById(b.dataset.t).classList.add('show');
+  window.scrollTo({top:document.querySelector('nav').offsetTop-10,behavior:'smooth'});
+}));
+
+// QUIZ
+const quiz=[
+ {stem:"Paciente con HTA resistente, hipopotasemia y alcalosis metabólica. Aldosterona alta y renina suprimida. Diagnóstico más probable:",
+  opts:["Hiperaldosteronismo secundario","Hiperaldosteronismo primario (Conn)","Feocromocitoma","Cushing iatrogénico"],a:1,
+  fb:"La combinación aldosterona ↑ + renina ↓ (ARR elevada) con hipokalemia define el hiperaldosteronismo primario."},
+ {stem:"Fenotipo cushingoide con cortisol y ACTH ambos suprimidos. La causa es:",
+  opts:["Adenoma hipofisario","Carcinoma suprarrenal","Corticoides exógenos (iatrogénico)","ACTH ectópico"],a:2,
+  fb:"ACTH y cortisol endógenos suprimidos indican Cushing iatrogénico por esteroides exógenos."},
+ {stem:"Hipercalcemia con PTH suprimida en paciente hospitalizado con pérdida de peso. Sospecha primaria:",
+  opts:["Hiperparatiroidismo primario","Malignidad (PTHrP / metástasis)","Hipocalcemia familiar","Déficit de vitamina D"],a:1,
+  fb:"Ca ↑ con PTH ↓ orienta a causa PTH-independiente; en el hospital, la malignidad es la primera sospecha."},
+ {stem:"Espasmo carpopedal al inflar el manguito de presión por 3 minutos corresponde al signo de:",
+  opts:["Chvostek","Trousseau","Kussmaul","Lid-lag"],a:1,
+  fb:"El signo de Trousseau (mano de partero) es más específico de hipocalcemia que el de Chvostek."},
+ {stem:"Crisis de cefalea, diaforesis y palpitaciones con HTA paroxística. Antes de iniciar betabloqueo se debe:",
+  opts:["Iniciar diurético","Realizar alfabloqueo previo","Dar corticoides","Restringir sodio"],a:1,
+  fb:"En el feocromocitoma el betabloqueo sin alfabloqueo previo puede precipitar crisis hipertensiva."}
+];
+const qb=document.getElementById('quizbox');
+quiz.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='q';
+  d.innerHTML=`<div class="stem">${i+1}. ${q.stem}</div>`;
+  q.opts.forEach((o,j)=>{
+    const btn=document.createElement('button');btn.className='opt';btn.textContent=o;
+    btn.onclick=()=>{
+      if(d.dataset.done)return;d.dataset.done=1;
+      const opts=d.querySelectorAll('.opt');
+      opts[q.a].classList.add('correct');
+      if(j!==q.a)btn.classList.add('wrong');
+      d.querySelector('.fb').classList.add('show');
+    };
+    d.appendChild(btn);
+  });
+  const fb=document.createElement('div');fb.className='fb';fb.innerHTML=`<b>Explicación:</b> ${q.fb}`;
+  d.appendChild(fb);qb.appendChild(d);
+});
+</script>
+</body>
+</html>
